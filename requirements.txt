@@ -1,1 +1,5 @@
-tldextract
+# Phishing URL Detector - Dependencies
+# Install with: pip install -r requirements.txt
+
+tldextract>=3.4.0
+urllib3>=1.26.0
