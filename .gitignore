@@ -1,19 +1,85 @@
-# Byte-compiled / optimized / DLL files
+# 🐍 Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# VS Code
-.vscode/
-
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# Python virtual environments
-env/
+# 🌐 Virtual Environments
 venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Logs and data
+# 🧪 Testing & Coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# 🗂 IDE & Editor Settings
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# 🔐 Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+config_secrets.py
+
+# 📊 Logs & Output
 *.log
+logs/
+output/
+results/
+*.csv
+*.json
+
+# 🍎 OS Files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# 📦 Distribution
+*.zip
+*.tar.gz
+*.rar
+
+# 🚫 Project-Specific (Optional)
+# sample_test_urls.txt  ← Keep this tracked (it's documentation)
+# But ignore any personal test files:
+personal_tests/
+my_urls.txt
+
+# 🔧 Jupyter Notebooks (if used later)
+.ipynb_checkpoints/
+*.ipynb
