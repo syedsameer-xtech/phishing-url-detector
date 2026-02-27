@@ -1,20 +1,27 @@
-# ✅ Safe URLs
-https://www.google.com
-https://www.github.com
-https://www.python.org
-https://www.bankofamerica.com
-https://accounts.google.com
+# 🛡️ Phishing URL Detector - Sample Test URLs
+# Format: URL | Expected Result | Notes
 
-# ⚠️ Suspicious URLs
-http://login-secure-paypal.com
-http://update.bankofamerica.login.info
-http://signin-update.verifyaccount.net
-http://login.confirm-password-check.ru
+# ✅ Likely Safe URLs
+https://www.google.com/search?q=python | ✅ Likely safe | Legitimate search
+https://github.com/user/repo | ✅ Likely safe | Standard GitHub URL
+https://example.com/page | ✅ Likely safe | Minimal, clean URL
 
-# ❌ Likely Phishing
-http://192.168.0.1/login
-http://secure-paypa1.com/verify/account
-http://update-login.verify-password.com
-http://account.verify-login-update.net
-http://free-amazon-voucher.claim-now.ru
-http://malicious-login-facebook.com.security-login.ru
+# ⚠️ Suspicious URLs (medium risk)
+https://secure-bank-login.verify-account.com/signin | ⚠️ Suspicious | Suspicious keywords + subdomains
+http://192.168.1.100/login.php | ⚠️ Suspicious | IP address + login keyword
+https://dropbox-secure.file-update.tk/verify | ⚠️ Suspicious | Bad TLD + keywords
+
+# 🚨 Likely Phishing URLs (high risk)
+https://paypa1.com/verify/account?session=abc123 | 🚨 Likely phishing | Typosquatting (paypa1) + keywords
+http://faceb00k-login.ga/secure/wp-login.php | 🚨 Likely phishing | Typosquatting + bad TLD + keywords
+https://support@apple-security-confirm.ru/validate | 🚨 Likely phishing | @ symbol + bad TLD + keywords
+https://bit.ly/3xYz9Qw | ⚠️ Suspicious | URL shortener (use with caution)
+
+# ❌ Invalid/Malformed URLs
+not-a-valid-url | ❌ Invalid URL format | Missing protocol
+ftp://files.example.com | ⚠️ Suspicious | Non-HTTP protocol (may be unsafe)
+
+# 💡 Edge Cases to Test
+https://sub1.sub2.sub3.example.com/login | ⚠️ Suspicious | 3+ subdomains
+https://example.com/login?redirect=http://evil.com | ⚠️ Suspicious | Open redirect pattern
+https://g00gle.com/search | 🚨 Likely phishing | Zero instead of 'o' in brand name
